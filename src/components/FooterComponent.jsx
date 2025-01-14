@@ -17,7 +17,7 @@ const FooterComponent = () => {
         >
             <Grid container spacing={3}>
                 {/* Logo and Description */}
-                <Grid item xs={12} sm={6} md={3}>
+                <Grid item xs={12} sm={6} md={6}>
                     <Toolbar disableGutters>
                         <AnimationIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
                         <Typography
@@ -55,24 +55,24 @@ const FooterComponent = () => {
                         </Link>
                     </Box>
                     <Box>
-                        <Link href="/shop" color="inherit" underline="none">
-                            Shop
+                        <Link href="/event" color="inherit" underline="none">
+                            Products
                         </Link>
                     </Box>
                     <Box>
-                        <Link href="/about" color="inherit" underline="none">
-                            About Us
+                        <Link href="/exhibitorsearch" color="inherit" underline="none">
+                        Exhibitor
                         </Link>
                     </Box>
                     <Box>
-                        <Link href="/contact" color="inherit" underline="none">
-                            Contact Us
+                        <Link href="/scheduledevents" color="inherit" underline="none">
+                        Scheduled Events
                         </Link>
                     </Box>
                 </Grid>
 
                 {/* Customer Support */}
-                <Grid item xs={12} sm={6} md={3}>
+                {/* <Grid item xs={12} sm={6} md={3}>
                     <Typography variant="h6" gutterBottom>
                         Customer Service
                     </Typography>
@@ -91,7 +91,7 @@ const FooterComponent = () => {
                             Shipping Info
                         </Link>
                     </Box>
-                </Grid>
+                </Grid> */}
 
                 {/* Social Media Links */}
                 <Grid item xs={12} sm={6} md={3}>

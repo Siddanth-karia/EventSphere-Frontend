@@ -84,21 +84,18 @@ const LoginPage = () => {
             localStorage.setItem('user', JSON.stringify(response.data.data))
             setFormData({ email: "", password: "" });
             toast.success("Login successful!");
-            // if (response.data.data.role == 'organizer') {
-            //   navigate("/organizer")
-            // }
-            // else if (response.data.data.role == "exhibitor") {
-            //   navigate("/exhibitor")
-            // }
-            // else if (response.data.data.role == 'attendee') {
-            //   navigate("/")
-            // }
-
-            if(response.data.data.role == 'attendee'){
-              navigate("/")
-            }else{
-              navigate(`/${response.data.data.role}`) 
+            const { role } = response.data.data;
+  
+            // Navigate based on the user's role
+            if (role == "organizer") {
+              navigate("/organizer");
+            } else if (role == "exhibitor") {
+              navigate("/exhibitor");
+            } else {
+              navigate("/"); // Redirect to the guest portal if no specific role
             }
+
+           
           } else {
             toast.error(response.data.message);
           }

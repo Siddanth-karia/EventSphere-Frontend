@@ -32,18 +32,6 @@ const NAVIGATION = [
     title: 'Main items',
   },
   {
-    segment: 'dashboard',
-    title: 'Dashboard',
-    icon: <DashboardIcon />,
-  },
-  {
-    kind: 'divider',
-  },
-  {
-    kind: 'header',
-    title: 'Analytics',
-  },
-  {
     segment: 'expomanagement',
     title: 'Expo Management',
     icon: <BarChartIcon />,
@@ -149,25 +137,21 @@ const Skeleton = styled('div')(({ theme, height }) => ({
 }));
 
 export default function OrganizerDashboard(props) {
-  const { window, children } = props;
-  const router = useDemoRouter('/dashboard');
+  const { window, children,handleLogout } = props;
+  const router = useDemoRouter('/expomanagement');
   const navigate = useNavigate()
 
-  const handleLogout = () => {
-    localStorage.removeItem('user');
-    navigate('/login');
-  };
+  // const handleLogout = () => {
+  //   localStorage.removeItem('user');
+  //   navigate('/login');
+  // };
 
   const renderPage = () => {
     switch (router.pathname) {
-      case '/dashboard':
-        return <AnalyticsPage/>;
-      case '/reports':
-        return <ReportsPage />;
-      case '/reports/sales':
-        return <SalesPage />;
-      case '/reports/traffic':
-        return <TrafficPage />;
+   
+
+      case '/expomanagement':
+        return <EventExpos router={router} />;
       case '/expomanagement/createexpo':
         return <CreateEventExpos />;
       case '/expomanagement/events':
@@ -199,6 +183,12 @@ export default function OrganizerDashboard(props) {
       router={router}
       theme={demoTheme}
       window={demoWindow}
+      branding={
+        {
+          logo: <img src="logo.jpg" alt="MUI logo" />,
+          title: '',
+          homeUrl:"roommanagement"
+         } }
     >
       <DashboardLayout>
         <PageContainer>

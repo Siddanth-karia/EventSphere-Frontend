@@ -86,15 +86,15 @@ const Skeleton = styled('div')(({ theme, height }) => ({
 }));
 
 export default function ExhibitorDashboard(props) {
-  const { window, children } = props;
+  const { window, children ,handleLogout } = props;
 
   const router = useDemoRouter('/dashboard');
   const navigate = useNavigate()
   
-    const handleLogout = () => {
-      localStorage.removeItem('user');
-      navigate('/login');
-    };
+    // const handleLogout = () => {
+    //   localStorage.removeItem('user');
+    //   navigate('/login');
+    // };
 
   // Map routes to components
   const renderPage = () => {
@@ -121,6 +121,12 @@ export default function ExhibitorDashboard(props) {
       router={router}
       theme={demoTheme}
       window={demoWindow}
+      branding={
+        {
+          logo: <img src="logo.jpg" alt="MUI logo" />,
+          title: '',
+          homeUrl:"roommanagement"
+         } }
     >
       <DashboardLayout>
         <PageContainer>

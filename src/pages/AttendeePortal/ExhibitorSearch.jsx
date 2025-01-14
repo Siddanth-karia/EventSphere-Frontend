@@ -33,7 +33,7 @@ const ExhibitorSearch = () => {
     };
 
     return (
-        <Box sx={{ padding: 4 }}>
+        <Box sx={{ padding: 4,minHeight: '70vh' }}>
             <Typography variant="h4" sx={{ marginBottom: 2 }}>Exhibitor Search and Interaction</Typography>
             <TextField
                 label="Search Exhibitor"

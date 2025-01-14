@@ -74,8 +74,8 @@ const Home = () => {
   console.log(user);
   // State to hold form data
   const [formData, setFormData] = useState({
-    name: user.name || "",
-    email: user.email || "",
+    name: user?.name || "",
+    email: user?.email || "",
     message: "",
   });
 

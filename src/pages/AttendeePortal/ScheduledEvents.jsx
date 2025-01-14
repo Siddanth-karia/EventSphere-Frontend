@@ -58,7 +58,7 @@ const registerEvent = async (id) => {
     }
   }
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minHeight: '100vh', padding: 3 }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minHeight: '70vh', padding: 3 }}>
             <TextField
                 label="Search Event by Name"
                 variant="outlined"
